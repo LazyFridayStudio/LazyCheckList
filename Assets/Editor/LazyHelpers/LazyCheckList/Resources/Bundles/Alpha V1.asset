@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ce6b1c1eae665841aa0841d67896445, type: 3}
+  m_Name: Alpha V1
+  m_EditorClassIdentifier: 
+  thumbnail: {fileID: 2800000, guid: 053fa627c1c00fd428f54de6bd307747, type: 3}
+  bundleName: Alpha V1
+  bundleDescription: Basic description of a bundle to be displayed in the bundle
+    browser
+  activeDisplayCategories: []
+  allCategories: []

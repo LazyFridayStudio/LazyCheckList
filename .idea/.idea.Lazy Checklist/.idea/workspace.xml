@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="51cc976b-a5d3-45cd-b47a-33642475f56c" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Editor/LazyHelpers/Resources/LazyEditorHelperUtils.cs" />
+        <option value="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazySceneLoader/LazySceneLoader.cs" />
+        <option value="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/LazyCheckListScriptables.cs" />
+        <option value="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/LazyCheckListBundle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/LazyCheckListMaster.cs" />
+        <option value="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/LazyCheckListCategory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Scriptables/LazyCheckListCategory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazySceneLoader/LazyScene.cs" />
+        <option value="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Scriptables/LazyCheckListBundle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/LazyCheckList.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1rEixnU82FT1FKGGbq7iUJ1ZWAm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="51cc976b-a5d3-45cd-b47a-33642475f56c" name="Default Changelist" comment="" />
+      <created>1618547899549</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1618547899549</updated>
+      <workItem from="1618547907547" duration="531000" />
+      <workItem from="1618548452606" duration="852000" />
+      <workItem from="1618551892041" duration="145000" />
+      <workItem from="1618557330705" duration="11560000" />
+      <workItem from="1618627984601" duration="3163000" />
+      <workItem from="1618717667842" duration="524000" />
+      <workItem from="1618718261583" duration="7329000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="WindowStateProjectService">
+    <state x="891" y="310" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1618718931386">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="891" y="310" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.2560.1400/-1920.360.1920.1080/2560.360.1920.1080@0.0.2560.1400" timestamp="1618718931386" />
+    <state x="2812" y="579" width="1882" height="1087" maximized="true" key="dock-window-1" timestamp="1618718581786">
+      <screen x="2560" y="360" width="1920" height="1080" />
+    </state>
+    <state x="2313" y="592" width="1882" height="1087" maximized="true" key="dock-window-1/0.0.2560.1400/-1920.360.1920.1080/2560.360.1920.1080@0.0.2560.1400" timestamp="1618718581786" />
+    <state x="2812" y="579" width="1882" height="1087" maximized="true" key="dock-window-1/0.0.2560.1400/-1920.360.1920.1080/2560.360.1920.1080@2560.360.1920.1080" timestamp="1618628294106" />
+    <state x="-1231" y="465" width="1893" height="968" key="dock-window-2" timestamp="1618548932387">
+      <screen x="-1920" y="360" width="1920" height="1080" />
+    </state>
+    <state x="-1231" y="465" width="1893" height="968" key="dock-window-2/0.0.2560.1400/-1920.360.1920.1080/2560.360.1920.1080@0.0.2560.1400" timestamp="1618548932387" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1618557337445">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400/-1920.360.1920.1080/2560.360.1920.1080@0.0.2560.1400" timestamp="1618557337445" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazySceneLoader/LazySceneLoader.cs</url>
+          <line>46</line>
+          <properties documentPath="D:\Unity Packages Projects\Lazy Checklist\Assets\Editor\LazyHelpers\LazySceneLoader\LazySceneLoader.cs" initialLine="46">
+            <startOffsets>
+              <option value="1529" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1530" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
