@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Alpha V1
   m_EditorClassIdentifier: 
   thumbnail: {fileID: 0}
-  bundleName: Alpha V1
+  bundleName: Alpha1
   bundleDescription: Basic description of a bundle to be displayed in the bundle
     browser
-  activeDisplayCategories: {fileID: 0}
+  activeDisplayCategories: []
   generalCategory: {fileID: 11400000, guid: 56ee5b4be442a4d4c97a050ce193c82f, type: 2}
   urgentCategory: {fileID: 11400000, guid: f5430a2980349b34d85bd168ee6b3de0, type: 2}
   wIPCategory: {fileID: 11400000, guid: dddd899bedfbc84429f4bb1a4c597f93, type: 2}
