@@ -210,7 +210,7 @@ namespace LazyHelper.LazyCheckList
             GUI.DrawTexture(itemSection, mainBackground);
 
             //Draw Seperators
-           // GUI.DrawTexture(new Rect(categorySection.width - 2, headerSection.height + subMenuSection.height, 2, categorySection.height), seperator);
+            //GUI.DrawTexture(new Rect(categorySection.width - 2, headerSection.height + subMenuSection.height, 2, categorySection.height), seperator);
             GUI.DrawTexture(new Rect(headerSection.x, headerSection.height - 2, headerSection.width, 2), seperator);
             GUI.DrawTexture(new Rect(subMenuSection.x, (subMenuSection.height + headerSection.height) - 2, subMenuSection.width, 2), seperator);
         }
@@ -750,7 +750,44 @@ namespace LazyHelper.LazyCheckList
             tempItem.bundleName = _bundleName;
             tempItem.bundleDescription = _BundleDescription;
 
+            
+            
+            //Create folder
+            AssetDatabase.CreateFolder("Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles", _bundleName);
+            
+            //General
+            LazyCheckListCategory generalTempCategory = CreateInstance(typeof(LazyCheckListCategory)) as LazyCheckListCategory;
+            AssetDatabase.CreateAsset(generalTempCategory, "Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/" + _bundleName + "/" + _bundleName +"-General.asset");
+            
+            //Urgent
+            LazyCheckListCategory urgentTempCategory = CreateInstance(typeof(LazyCheckListCategory)) as LazyCheckListCategory;
+            AssetDatabase.CreateAsset(urgentTempCategory, "Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/"+ _bundleName + "/"+ _bundleName +"-Urgent.asset");
+            
+            //WIP
+            LazyCheckListCategory wipTempCategory = CreateInstance(typeof(LazyCheckListCategory)) as LazyCheckListCategory;
+            AssetDatabase.CreateAsset(wipTempCategory, "Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/"+ _bundleName + "/" + _bundleName +"-WIP.asset");
+            
+            //Bug
+            LazyCheckListCategory bugTempCategory = CreateInstance(typeof(LazyCheckListCategory)) as LazyCheckListCategory;
+            AssetDatabase.CreateAsset(bugTempCategory, "Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/"+ _bundleName + "/" + _bundleName +"-Bug.asset");
+            
+            //Idea
+            LazyCheckListCategory ideaTempCategory = CreateInstance(typeof(LazyCheckListCategory)) as LazyCheckListCategory;
+            AssetDatabase.CreateAsset(ideaTempCategory, "Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/"+ _bundleName + "/" + _bundleName +"-Idea.asset");
+            
+            //Done
+            LazyCheckListCategory doneTempCategory = CreateInstance(typeof(LazyCheckListCategory)) as LazyCheckListCategory;
+            AssetDatabase.CreateAsset(doneTempCategory, "Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/"+ _bundleName + "/" + _bundleName +"-Done.asset");
+
+            tempItem.generalCategory = generalTempCategory;
+            tempItem.urgentCategory = urgentTempCategory;
+            tempItem.wIPCategory = wipTempCategory;
+            tempItem.bugCategory = bugTempCategory;
+            tempItem.ideaCategory = ideaTempCategory;
+            tempItem.doneCategory = doneTempCategory;
+
             AssetDatabase.CreateAsset(tempItem, "Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/"+ _bundleName +".asset");
+            
             masterChecklist.AllBundles.Add(tempItem);
             AssetDatabase.SaveAssets();
         }
@@ -826,34 +863,31 @@ namespace LazyHelper.LazyCheckList
     
     public class LazyCheckList : EditorWindow
     {
-        #region Editer General Values
-
         public static LazyCheckList window;
-
-        #endregion
-        public static LazyCheckListBundle currentBundle;
+        private static LazyCheckListBundle bundle;
+        private LazyCheckListMaster masterChecklist;
+        private string bundleLocation;
         
-        public static void Init(LazyCheckListBundle _currentBundle)
+        #region Editer General Values
+        public static void Init(LazyCheckListBundle asset)
         {
-            currentBundle = _currentBundle;
-            
             // Get existing open window or if none, make a new one:
             window = (LazyCheckList) GetWindow(typeof(LazyCheckList));
-            window.titleContent.text = "Bundle Explorer: " + currentBundle.bundleName;
-            window.position = new Rect(0, 0, 600, 800);
+            window.titleContent.text = "Bundle Viewer";
+            window.position = new Rect(window.position.x, window.position.y, 710, 350);
             window.autoRepaintOnSceneChange = false;
-
+            bundle = asset;
         }
-
-        public static LazyCheckListBundle checkListItem;
-
+        #endregion
+        
         #region Styles
         public GUIStyle mainTextStyle = new GUIStyle();
         public GUIStyle secondaryTextStyle = new GUIStyle();
         public GUIStyle generalTexStyle = new GUIStyle();
+        public GUIStyle paddingStyle = new GUIStyle();
 
-        public GUIStyle evenItemStyle;
-        public GUIStyle oddItemStyle;
+        public GUIStyle evenItemStyle = new GUIStyle();
+        public GUIStyle oddItemStyle = new GUIStyle();
         #endregion
         #region Textures
         private Texture2D mainBackground;
@@ -862,25 +896,32 @@ namespace LazyHelper.LazyCheckList
         private Texture2D oddBackground;
         private Texture2D evenBackground;
         #endregion
-        #region Generation Functions
+        #region Sections
 
+        Rect headerSection;
+        Rect subMenuSection;
+        Rect itemSection; 
+        Rect categorySection;
+
+        #endregion
+        #region Generation Functions
         private void OnHierarchyChange()
         {
             OnEnable();
             Repaint();
         }
-
+        
         private void GenerateStyle()
         {
             string path = "Assets/Editor/LazyHelpers/Resources/HeaderFont.ttf";
             Font headerFont = EditorGUIUtility.Load(path) as Font;
-
+            
             //Main Text
             mainTextStyle.normal.textColor = LazyEditorHelperUtils.LazyFridayMainColor;
             mainTextStyle.fontSize = 16;
             mainTextStyle.alignment = TextAnchor.LowerCenter;
-            mainTextStyle.font = headerFont;
-
+            mainTextStyle.font = headerFont; 
+            
             //Secondary Text
             secondaryTextStyle.normal.textColor = LazyEditorHelperUtils.LazyFridayMainColor;
             secondaryTextStyle.fontSize = 12;
@@ -890,8 +931,8 @@ namespace LazyHelper.LazyCheckList
             //General Text
             generalTexStyle.normal.textColor = LazyEditorHelperUtils.LazyFridaySecondaryColor;
             generalTexStyle.fontSize = 12;
-            generalTexStyle.alignment = TextAnchor.MiddleLeft;
-
+            generalTexStyle.alignment = TextAnchor.MiddleCenter;
+            
             //Item Styles
             oddItemStyle.normal.background = oddBackground;
             oddItemStyle.padding = new RectOffset(3, 3, 3, 3);
@@ -902,14 +943,16 @@ namespace LazyHelper.LazyCheckList
             evenItemStyle.border = new RectOffset(0, 0, 5, 5);
             evenItemStyle.padding = new RectOffset(3, 3, 3, 3);
             evenItemStyle.normal.textColor = LazyEditorHelperUtils.LazyFridaySecondaryColor;
+            
+            paddingStyle.margin = new RectOffset(2, 2, 4, 4);
         }
-
+        
         private void GenerateTextures()
         {
             mainBackground = new Texture2D(1, 1);
             mainBackground.SetPixel(0, 0, LazyEditorHelperUtils.LazyFridayBackgroundColor);
             mainBackground.Apply();
-
+            
             secondaryBackground = new Texture2D(1, 1);
             secondaryBackground.SetPixel(0, 0, new Color32(33, 33, 33, 255));
             secondaryBackground.Apply();
@@ -917,7 +960,7 @@ namespace LazyHelper.LazyCheckList
             seperator = new Texture2D(1, 1);
             seperator.SetPixel(0, 0, new Color32(242, 242, 242, 255));
             seperator.Apply();
-
+            
             //Item areas
             evenBackground = new Texture2D(1, 1);
             evenBackground.SetPixel(0, 0, new Color32(44, 44, 44, 255));
@@ -927,12 +970,190 @@ namespace LazyHelper.LazyCheckList
             oddBackground.SetPixel(0, 0, new Color32(33, 33, 33, 255));
             oddBackground.Apply();
         }
-
+        
         //Start Function
         private void OnEnable()
         {
-            GenerateTextures();
             GenerateStyle();
+            GenerateTextures();
+        }
+        #endregion
+
+        private void OnDestroy()
+        {
+            AssetDatabase.SaveAssets();
+        }
+
+        private bool isCreatingNewBundle;
+        
+        #region Drawing Functions
+
+        private void OnGUI()
+        {
+            if (bundle == null)
+            {
+                if (EditorPrefs.HasKey("BundleLocation"))
+                {
+                    bundleLocation = EditorPrefs.GetString("BundleLocation");
+                    bundle = AssetDatabase.LoadAssetAtPath(bundleLocation, typeof(LazyCheckListBundle)) as LazyCheckListBundle;
+                }
+                else
+                {
+                    if (window != null)
+                    {
+                        window.Close();
+                    }
+                    else
+                    {
+                        window = (LazyCheckList) GetWindow(typeof(LazyCheckList)); 
+                        window.Close();
+                    }
+                }
+            }
+            else
+            {
+                EditorPrefs.SetString("BundleLocation", AssetDatabase.GetAssetPath(bundle));
+            }
+            
+            if (masterChecklist == null)
+            {
+                OnEnable();
+                masterChecklist = AssetDatabase.LoadAssetAtPath("Assets/Editor/LazyHelpers/LazyCheckList/Resources/CheckListMaster.asset", typeof(LazyCheckListMaster)) as LazyCheckListMaster;
+            }
+
+            if (window == null)
+            {
+                window = (LazyCheckList) GetWindow(typeof(LazyCheckList));
+            }
+            
+            DrawLayout();
+            DrawHeader();
+            DrawSubHeading();
+            DrawItemArea();
+        }
+
+        private void DrawLayout()
+        {
+            headerSection.x = 0;
+            headerSection.y = 0;
+            headerSection.width = Screen.width;
+            headerSection.height = 25;
+
+            subMenuSection.x = 0;
+            subMenuSection.y = headerSection.height;
+            subMenuSection.width = Screen.width;
+            subMenuSection.height = 27;
+
+            itemSection.x = 75;
+            itemSection.y = headerSection.height + subMenuSection.height;
+            itemSection.width = Screen.width + itemSection.x;
+            itemSection.height = Screen.height;
+            
+            categorySection.x = 0;
+            categorySection.y = headerSection.height + subMenuSection.height;
+            categorySection.width = itemSection.x;
+            categorySection.height = Screen.height;
+
+            GUI.DrawTexture(headerSection, mainBackground);
+            GUI.DrawTexture(subMenuSection, secondaryBackground);
+            GUI.DrawTexture(categorySection, secondaryBackground);
+            GUI.DrawTexture(itemSection, mainBackground);
+
+            //Draw Seperators
+            GUI.DrawTexture(new Rect(categorySection.width - 2, headerSection.height + subMenuSection.height, 2, categorySection.height), seperator);
+            GUI.DrawTexture(new Rect(headerSection.x, headerSection.height - 2, headerSection.width, 2), seperator);
+            GUI.DrawTexture(new Rect(subMenuSection.x, (subMenuSection.height + headerSection.height) - 2, subMenuSection.width, 2), seperator);
+        }
+
+        private void DrawHeader()
+        {
+            GUILayout.BeginArea(headerSection);
+           // Rect centerRect = LazyEditorHelperUtils.CenterRect(headerSection, logoHeader);
+           GUILayout.Space(7);
+           GUILayout.BeginHorizontal();
+           GUILayout.Label("Bundle: " + bundle.bundleName, mainTextStyle);
+           GUILayout.EndHorizontal();
+            //GUI.Label(new Rect(centerRect.x + 13, centerRect.y - 2, centerRect.width, centerRect.height), logoHeader);
+            GUILayout.EndArea();
+        }
+
+        private bool isInEditMode;
+        private void DrawSubHeading()
+        {
+            GUILayout.BeginArea(subMenuSection);
+            GUILayout.BeginHorizontal(paddingStyle);
+
+            if (GUILayout.Button("Create new item", GUILayout.MaxWidth(120)))
+            {
+                
+            }
+            
+
+            isInEditMode = GUILayout.Toggle(isInEditMode, "Edit Mode");
+            
+            GUILayout.EndHorizontal();
+            GUILayout.EndArea();
+        }
+
+        private void DrawItemArea()
+        {
+            
+            
+            //Check List Buttons
+            GUILayout.BeginArea( new Rect(categorySection.x + 2,categorySection.y,categorySection.width - 6,categorySection.height));
+            
+            GUIStyle buttonStyle = new GUIStyle("Button");
+            buttonStyle.fontSize = 12;
+            buttonStyle.normal.textColor = Color.white;
+            buttonStyle.hover.textColor = LazyEditorHelperUtils.LazyFridayMainColor;
+            GUILayout.BeginVertical();
+            if (GUILayout.Button("General", buttonStyle,GUILayout.Height(25)))
+            {
+            }
+            
+            GUILayout.Space(5);
+            buttonStyle.normal.textColor = Color.red;
+            if (GUILayout.Button("Urgent", buttonStyle,GUILayout.Height(25)))
+            {
+            }
+            
+            GUILayout.Space(5);
+            buttonStyle.normal.textColor = Color.yellow;
+            if (GUILayout.Button("WIP", buttonStyle,GUILayout.Height(25)))
+            {
+            }
+            
+            GUILayout.Space(5);
+            
+            buttonStyle.normal.textColor = Color.cyan;
+            if (GUILayout.Button("Bug", buttonStyle,GUILayout.Height(25)))
+            {
+            }
+            
+            GUILayout.Space(5);
+            
+            buttonStyle.normal.textColor = Color.magenta;
+            if (GUILayout.Button("Idea", buttonStyle,GUILayout.Height(25)))
+            {
+            }
+            
+            GUILayout.Space(5);
+            
+            buttonStyle.normal.textColor = Color.green;
+            if (GUILayout.Button("Done", buttonStyle,GUILayout.Height(25)))
+            {
+            }
+
+
+            GUILayout.EndVertical();
+            GUILayout.EndArea();
+            
+            //Items Area
+            GUILayout.BeginArea(itemSection);
+            GUILayout.BeginVertical();
+            
+            GUILayout.EndVertical();
+            GUILayout.EndArea();
         }
         #endregion
     }

@@ -9,8 +9,13 @@ namespace LazyHelper.LazyCheckList.Scriptables
         public string bundleName;
         public string bundleDescription;
         
-        public List<LazyCheckListCategory> activeDisplayCategories = new List<LazyCheckListCategory>();
-        public List<LazyCheckListCategory> allCategories = new List<LazyCheckListCategory>();
+        public List<LazyCheckListCategory> activeDisplayCategories;
+        public LazyCheckListCategory generalCategory;
+        public LazyCheckListCategory urgentCategory;
+        public LazyCheckListCategory wIPCategory;
+        public LazyCheckListCategory bugCategory;
+        public LazyCheckListCategory ideaCategory;
+        public LazyCheckListCategory doneCategory;
     } 
 }
 
