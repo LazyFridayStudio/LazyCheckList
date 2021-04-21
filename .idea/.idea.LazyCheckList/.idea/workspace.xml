@@ -1,12 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="9eaa7a1b-0464-4d09-9228-0c60aaad7c1f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.LazyCheckList/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LazyCheckList/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LazyCheckList/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LazyCheckList/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LazyCheckList/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LazyCheckList/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/LazyCheckList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/LazyCheckList.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Alpha V1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Alpha V1.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Alpha V1/Alpha V1-General.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Alpha V1/Alpha V1-General.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/CheckListMaster.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/CheckListMaster.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +96,18 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
@@ -87,9 +117,10 @@
     </state>
     <state x="43" y="0" width="1893" height="1068" key="dock-window-1/-1920.-188.1920.1040/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1618904810575" />
     <state x="-1920" y="360" width="1936" height="1168" key="dock-window-1/0.0.2560.1400/-1920.360.1920.1080/2560.360.1920.1080@0.0.2560.1400" timestamp="1618918398243" />
-    <state x="831" y="305" width="896" height="879" key="search.everywhere.popup" timestamp="1618918089921">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="623" y="227" width="672" height="653" key="search.everywhere.popup" timestamp="1618973523192">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="623" y="227" width="672" height="653" key="search.everywhere.popup/-1920.-188.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1618973523192" />
     <state x="2543" y="235" width="672" height="678" key="search.everywhere.popup/-1920.-188.1920.1040/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1618902229853" />
     <state x="831" y="305" width="896" height="879" key="search.everywhere.popup/0.0.2560.1400/-1920.360.1920.1080/2560.360.1920.1080@0.0.2560.1400" timestamp="1618918089921" />
   </component>

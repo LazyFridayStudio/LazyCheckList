@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AllBundles:
   - {fileID: 11400000, guid: b47b8d99a95493f4484f6bde3f8235b7, type: 2}
+  - {fileID: 11400000, guid: eca67e484848e5349b7c2d0c4868c986, type: 2}
+  - {fileID: 11400000, guid: c924042ce63c8814594c9c0c95f9c7a4, type: 2}

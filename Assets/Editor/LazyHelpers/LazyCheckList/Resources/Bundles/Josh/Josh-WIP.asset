@@ -10,18 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79f57904cb74bd4ca1059531809242b, type: 3}
-  m_Name: Alpha V1-General
+  m_Name: Josh-WIP
   m_EditorClassIdentifier: 
-  Items:
-  - itemDescription: Alpha1
-    itemType: 0
-  - itemDescription: Alpha1
-    itemType: 0
-  - itemDescription: New Item
-    itemType: 0
-  - itemDescription: New Item
-    itemType: 0
-  - itemDescription: New Item
-    itemType: 0
-  - itemDescription: New Item
-    itemType: 0
+  Items: []

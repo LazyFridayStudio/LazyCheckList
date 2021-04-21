@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ce6b1c1eae665841aa0841d67896445, type: 3}
+  m_Name: Josh
+  m_EditorClassIdentifier: 
+  thumbnail: {fileID: 0}
+  bundleName: Josh
+  bundleDescription: Basic description of a bundle to be displayed in the bundle
+    browser
+  activeDisplayCategories: []
+  generalCategory: {fileID: 11400000, guid: 5ee1960db77158242aef94ad74badec7, type: 2}
+  urgentCategory: {fileID: 11400000, guid: 496173a6f78c59647beabbf2f09dd3ae, type: 2}
+  wIPCategory: {fileID: 11400000, guid: 7da929dabbf8ccf4e8f4b364f46872f1, type: 2}
+  bugCategory: {fileID: 11400000, guid: f1b53e12745cb054f8cf94c5dcd5ba23, type: 2}
+  ideaCategory: {fileID: 11400000, guid: db0d052128897ab44a2a8371109b4e91, type: 2}
+  doneCategory: {fileID: 11400000, guid: ffd02144cf050344c9cca41d2ed1a039, type: 2}

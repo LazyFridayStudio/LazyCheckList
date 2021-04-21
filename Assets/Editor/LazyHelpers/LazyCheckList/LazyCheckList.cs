@@ -871,7 +871,7 @@ namespace LazyHelper.LazyCheckList
             // Get existing open window or if none, make a new one:
             window = (LazyCheckList) GetWindow(typeof(LazyCheckList));
             window.titleContent.text = "Bundle Viewer";
-            window.position = new Rect(window.position.x, window.position.y, 960, 460);
+            window.position = new Rect(window.position.x, window.position.y, 970, 460);
             window.autoRepaintOnSceneChange = false;
             bundle = asset;
         }
@@ -973,6 +973,7 @@ namespace LazyHelper.LazyCheckList
         {
             GenerateStyle();
             GenerateTextures();
+            
         }
         #endregion
 
@@ -1075,6 +1076,7 @@ namespace LazyHelper.LazyCheckList
         }
 
         private bool isInEditMode;
+        private bool displayEdit;
         private void DrawSubHeading()
         {
             GUILayout.BeginArea(subMenuSection);
@@ -1090,18 +1092,29 @@ namespace LazyHelper.LazyCheckList
                 bundle.generalCategory.Items.Add(tempItem);
                 AssetDatabase.SaveAssets();
             }
-            
 
-            isInEditMode = GUILayout.Toggle(isInEditMode, "Edit Mode");
+            if (displayEdit)
+            {
+                isInEditMode = GUILayout.Toggle(isInEditMode, "Edit Mode");     
+            }
+
             
             GUILayout.EndHorizontal();
             GUILayout.EndArea();
         }
         private Vector2 scrollPosition = Vector2.zero;
 
+        private string[] types = new string[]
+        {
+            "General",
+            "Urgent",
+            "WIP",
+            "Bug",
+            "Idea",
+            "Done"
+        };
         private void DrawItemArea()
         {
-
             #region Check List Buttons
             //Check List Buttons
             GUILayout.BeginArea( new Rect(categorySection.x + 2,categorySection.y,categorySection.width - 6,categorySection.height));
@@ -1113,6 +1126,9 @@ namespace LazyHelper.LazyCheckList
             GUILayout.BeginVertical();
             if (GUILayout.Button("ALL", buttonStyle,GUILayout.Height(25)))
             {
+                isInEditMode = false;
+                displayEdit = false;
+                
                 bundle.activeDisplayCategories.Clear();
                 bundle.activeDisplayCategories.Add(bundle.generalCategory);
                 bundle.activeDisplayCategories.Add(bundle.urgentCategory);
@@ -1128,6 +1144,7 @@ namespace LazyHelper.LazyCheckList
             {
                 bundle.activeDisplayCategories.Clear();
                 bundle.activeDisplayCategories.Add(bundle.generalCategory);
+                displayEdit = true;
             }
             
             GUILayout.Space(5);
@@ -1136,6 +1153,7 @@ namespace LazyHelper.LazyCheckList
             {
                 bundle.activeDisplayCategories.Clear();
                 bundle.activeDisplayCategories.Add(bundle.urgentCategory);
+                displayEdit = true;
             }
             
             GUILayout.Space(5);
@@ -1144,6 +1162,7 @@ namespace LazyHelper.LazyCheckList
             {
                 bundle.activeDisplayCategories.Clear();
                 bundle.activeDisplayCategories.Add(bundle.wIPCategory);
+                displayEdit = true;
             }
             
             GUILayout.Space(5);
@@ -1153,6 +1172,7 @@ namespace LazyHelper.LazyCheckList
             {
                 bundle.activeDisplayCategories.Clear();
                 bundle.activeDisplayCategories.Add(bundle.bugCategory);
+                displayEdit = true;
             }
             
             GUILayout.Space(5);
@@ -1162,6 +1182,7 @@ namespace LazyHelper.LazyCheckList
             {
                 bundle.activeDisplayCategories.Clear();
                 bundle.activeDisplayCategories.Add(bundle.ideaCategory);
+                displayEdit = true;
             }
             
             GUILayout.Space(5);
@@ -1171,6 +1192,7 @@ namespace LazyHelper.LazyCheckList
             {
                 bundle.activeDisplayCategories.Clear();
                 bundle.activeDisplayCategories.Add(bundle.doneCategory);
+                displayEdit = true;
             }
 
 
@@ -1187,19 +1209,103 @@ namespace LazyHelper.LazyCheckList
             typeFontStyle.alignment = TextAnchor.LowerLeft;
             
             scrollPosition = GUILayout.BeginScrollView(scrollPosition);
-            
-            for (int i = 0; i < bundle.activeDisplayCategories.Count; i++)
+
+            int itemDisplay = 0;
+            if (bundle.activeDisplayCategories.Count > 0)
+            {
+                for (int i = 0; i < bundle.activeDisplayCategories.Count; i++)
             {
                 if (isInEditMode)
                 {
-                    
+                    for (int j = 0; j < bundle.activeDisplayCategories[i].Items.Count; j++)
+                    {
+
+                        bool isEven = itemDisplay % 2 == 0;
+                        itemDisplay += 1;
+                        GUIStyle itemStyle = new GUIStyle();
+
+                        if (isEven)
+                        {
+                            itemStyle = evenItemStyle;
+                        }
+                        else
+                        {
+                            itemStyle = oddItemStyle;
+                        }
+                        
+
+                        GUILayout.BeginHorizontal(itemStyle);
+                        bundle.activeDisplayCategories[i].Items[j].itemDescription = GUILayout.TextField(bundle.activeDisplayCategories[i].Items[j].itemDescription, 100, GUILayout.MaxWidth(750),GUILayout.MinWidth(750));
+                        
+                        int currentSelectedId = (int)bundle.activeDisplayCategories[i].Items[j].itemType;
+                        int beforeChange = (int)bundle.activeDisplayCategories[i].Items[j].itemType;
+                        currentSelectedId = EditorGUILayout.Popup(currentSelectedId, types);
+                        bundle.activeDisplayCategories[i].Items[j].itemType = (CheckListType)currentSelectedId;
+
+                        if (beforeChange != (int)bundle.activeDisplayCategories[i].Items[j].itemType)
+                        {
+                            CheckListItem tempitem = bundle.activeDisplayCategories[i].Items[j];
+                            switch (bundle.activeDisplayCategories[i].Items[j].itemType)
+                                {
+                                    case CheckListType.General:
+                                        bundle.generalCategory.Items.Add(tempitem);
+                                        break;
+                                    case CheckListType.Urgent:
+                                        bundle.urgentCategory.Items.Add(tempitem);
+                                        break;
+                                    case CheckListType.WIP:
+                                        bundle.wIPCategory.Items.Add(tempitem);
+                                        break;
+                                    case CheckListType.Bug:
+                                        bundle.bugCategory.Items.Add(tempitem);
+                                        break;
+                                    case CheckListType.Idea:
+                                        bundle.ideaCategory.Items.Add(tempitem);
+                                        break;
+                                    case CheckListType.Done:
+                                        bundle.doneCategory.Items.Add(tempitem);
+                                        break;
+                                }
+
+                                bundle.activeDisplayCategories[i].Items.RemoveAt(j);
+                        }
+                        
+                        buttonStyle.normal.textColor = Color.red;
+                        if (GUILayout.Button("X", buttonStyle,GUILayout.MaxWidth(25),GUILayout.MinWidth(25)))
+                        {
+                            switch (bundle.activeDisplayCategories[i].Items[j].itemType)
+                            {
+                                case CheckListType.General:
+                                    bundle.generalCategory.Items.RemoveAt(j);
+                                    break;
+                                case CheckListType.Urgent:
+                                    bundle.urgentCategory.Items.RemoveAt(j);
+                                    break;
+                                case CheckListType.WIP:
+                                    bundle.wIPCategory.Items.RemoveAt(j);
+                                    break;
+                                case CheckListType.Bug:
+                                    bundle.bugCategory.Items.RemoveAt(j);
+                                    break;
+                                case CheckListType.Idea:
+                                    bundle.ideaCategory.Items.RemoveAt(j);
+                                    break;
+                                case CheckListType.Done:
+                                    bundle.doneCategory.Items.RemoveAt(j);
+                                    break;
+                            }
+                        }
+                        
+                        GUILayout.EndHorizontal();
+                    }
                 }
                 else
                 {
                     for (int j = 0; j < bundle.activeDisplayCategories[i].Items.Count; j++)
                     {                  
 
-                        bool isEven = j % 2 == 0;
+                        bool isEven = itemDisplay % 2 == 0;
+                        itemDisplay += 1;
                         GUIStyle itemStyle = new GUIStyle();
 
                         if (isEven)
@@ -1211,12 +1317,12 @@ namespace LazyHelper.LazyCheckList
                             itemStyle = oddItemStyle;
                         }
                         GUILayout.BeginHorizontal(itemStyle);
-                        
+
                         typeFontStyle.normal.textColor = Color.white;
-                        GUILayout.Label(bundle.activeDisplayCategories[i].Items[j].itemDescription, typeFontStyle, GUILayout.MinWidth(800),GUILayout.MaxWidth(800));
+                        GUILayout.Label(bundle.activeDisplayCategories[i].Items[j].itemDescription, typeFontStyle, GUILayout.MinWidth(800), GUILayout.MaxWidth(800));
                         GUILayout.Space(5);
-                        GUILayout.Label("|", GUILayout.MaxWidth(10),GUILayout.MinWidth(10));
-GUILayout.Space(5);
+                        GUILayout.Label("|", GUILayout.MaxWidth(10), GUILayout.MinWidth(10));
+                        GUILayout.Space(5);
                         switch (bundle.activeDisplayCategories[i].Items[j].itemType)
                         {
                             case CheckListType.General:
@@ -1238,17 +1344,15 @@ GUILayout.Space(5);
                                 typeFontStyle.normal.textColor = Color.green;
                                 break;
                         }
+
                         GUILayout.Label(bundle.activeDisplayCategories[i].Items[j].itemType.ToString(), typeFontStyle);
                         GUILayout.FlexibleSpace();
 
                         GUILayout.EndHorizontal();
                     }
-
-                    
-                    
-
                 }
-
+            }
+            
             }
             
             GUILayout.EndScrollView();
