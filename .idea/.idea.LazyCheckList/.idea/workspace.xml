@@ -20,11 +20,54 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9eaa7a1b-0464-4d09-9228-0c60aaad7c1f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.LazyCheckList/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LazyCheckList/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LazyCheckList/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LazyCheckList/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/LazyCheckList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/LazyCheckList.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Alpha V1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Alpha V1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Alpha V1.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Alpha V1.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Alpha V1/Alpha V1-Bug.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Alpha V1/Alpha V1-Bug.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Alpha V1/Alpha V1-Bug.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Alpha V1/Alpha V1-Bug.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Alpha V1/Alpha V1-Done.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Alpha V1/Alpha V1-Done.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Alpha V1/Alpha V1-Done.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Alpha V1/Alpha V1-Done.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Alpha V1/Alpha V1-General.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Alpha V1/Alpha V1-General.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Alpha V1/Alpha V1-General.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Alpha V1/Alpha V1-General.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Alpha V1/Alpha V1-Idea.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Alpha V1/Alpha V1-Idea.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Alpha V1/Alpha V1-Idea.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Alpha V1/Alpha V1-Idea.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Alpha V1/Alpha V1-Urgent.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Alpha V1/Alpha V1-Urgent.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Alpha V1/Alpha V1-Urgent.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Alpha V1/Alpha V1-Urgent.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Alpha V1/Alpha V1-WIP.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Alpha V1/Alpha V1-WIP.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Alpha V1/Alpha V1-WIP.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Alpha V1/Alpha V1-WIP.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Josh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Josh.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Josh.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Josh/Josh-Bug.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Josh/Josh-Bug.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Josh/Josh-Done.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Josh/Josh-Done.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Josh/Josh-General.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Josh/Josh-General.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Josh/Josh-Idea.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Josh/Josh-Idea.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Josh/Josh-Urgent.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Josh/Josh-Urgent.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Josh/Josh-WIP.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/Josh/Josh-WIP.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/jake Checklist.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/jake Checklist.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/jake Checklist.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/jake Checklist/jake Checklist-Bug.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/jake Checklist/jake Checklist-Bug.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/jake Checklist/jake Checklist-Done.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/jake Checklist/jake Checklist-Done.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/jake Checklist/jake Checklist-General.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/jake Checklist/jake Checklist-General.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/jake Checklist/jake Checklist-Idea.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/jake Checklist/jake Checklist-Idea.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/jake Checklist/jake Checklist-Urgent.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/jake Checklist/jake Checklist-Urgent.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/jake Checklist/jake Checklist-WIP.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/jake Checklist/jake Checklist-WIP.asset.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/CheckListMaster.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Resources/CheckListMaster.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Scriptables/LazyCheckListBundle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/LazyHelpers/LazyCheckList/Scriptables/LazyCheckListBundle.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +131,7 @@
       <updated>1618899336862</updated>
       <workItem from="1618899352762" duration="5405000" />
       <workItem from="1618917161051" duration="2498000" />
+      <workItem from="1619088918982" duration="4731000" />
     </task>
     <servers />
   </component>
@@ -112,10 +156,16 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1920" y="360" width="1936" height="1168" key="dock-window-1" timestamp="1618918398243">
-      <screen x="-1920" y="360" width="1920" height="1080" />
+    <state x="3225" y="599" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1619092673775">
+      <screen x="2560" y="360" width="1920" height="1080" />
+    </state>
+    <state x="887" y="310" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.2560.1400/-1920.360.1920.1080/2560.360.1920.1080@0.0.2560.1400" timestamp="1619090327837" />
+    <state x="3225" y="599" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.2560.1400/-1920.360.1920.1080/2560.360.1920.1080@2560.360.1920.1080" timestamp="1619092673775" />
+    <state x="-102" y="386" width="1936" height="1168" key="dock-window-1" timestamp="1619089479212">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="43" y="0" width="1893" height="1068" key="dock-window-1/-1920.-188.1920.1040/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1618904810575" />
+    <state x="-102" y="386" width="1936" height="1168" key="dock-window-1/0.0.2560.1400/-1920.360.1920.1080/2560.360.1920.1080@-1920.360.1920.1080" timestamp="1619089479212" />
     <state x="-1920" y="360" width="1936" height="1168" key="dock-window-1/0.0.2560.1400/-1920.360.1920.1080/2560.360.1920.1080@0.0.2560.1400" timestamp="1618918398243" />
     <state x="623" y="227" width="672" height="653" key="search.everywhere.popup" timestamp="1618973523192">
       <screen x="0" y="0" width="1920" height="1040" />

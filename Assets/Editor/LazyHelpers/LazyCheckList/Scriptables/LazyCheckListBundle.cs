@@ -7,6 +7,7 @@ namespace LazyHelper.LazyCheckList.Scriptables
     {
         public Texture thumbnail;
         public string bundleName;
+        public string orginalName;
         public string bundleDescription;
         
         public List<LazyCheckListCategory> activeDisplayCategories;

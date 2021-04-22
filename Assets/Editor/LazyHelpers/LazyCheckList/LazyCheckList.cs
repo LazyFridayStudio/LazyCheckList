@@ -1,14 +1,10 @@
 ﻿#region NameSpaces
-
 using System;
-using System.Collections.Generic;
+using System.IO;
 using LazyHelper.LazyCheckList.Scriptables;
 using UnityEngine;
 using UnityEditor;
-using UnityEditor.SceneManagement;
 using Object = UnityEngine.Object;
-using Random = UnityEngine.Random;
-
 #endregion
 
 //================================================================
@@ -57,7 +53,7 @@ namespace LazyHelper.LazyCheckList
             // Get existing open window or if none, make a new one:
             window = (LazyCheckListExplorer) GetWindow(typeof(LazyCheckListExplorer));
             window.titleContent.text = "Lazy Checklist Explorer";
-            window.position = new Rect(0, 0, 600, 800);
+            window.position = new Rect(0, 0, 700, 420);
             window.autoRepaintOnSceneChange = false;
         }
         #endregion
@@ -158,12 +154,11 @@ namespace LazyHelper.LazyCheckList
         //Start Function
         private void OnEnable()
         {
+            GenerateTextures();
             GenerateAndCheckFiles();
             GenerateStyle();
-            GenerateTextures();
         }
         #endregion
-        
         #region Drawing Functions
 
         private void OnGUI()
@@ -171,8 +166,8 @@ namespace LazyHelper.LazyCheckList
             if (mainBackground == null)
             {
                 OnEnable();
+                GenerateStyle();
             }
-            
             DrawLayout();
             DrawHeader();
             DrawSubHeading();
@@ -708,7 +703,7 @@ namespace LazyHelper.LazyCheckList
                         bool nameAlreadyTaken = false;
                         for (int i = 0; i < masterChecklist.AllBundles.Count; i++)
                         {
-                            if (masterChecklist.AllBundles[i].bundleName == bundleName)
+                            if (masterChecklist.AllBundles[i].orginalName == bundleName)
                             {
                                 nameAlreadyTaken = true;
                             }
@@ -745,6 +740,7 @@ namespace LazyHelper.LazyCheckList
             LazyCheckListBundle tempItem = CreateInstance(typeof(LazyCheckListBundle)) as LazyCheckListBundle;
             tempItem.thumbnail = (Texture)_thumbnail;
             tempItem.bundleName = _bundleName;
+            tempItem.orginalName = _bundleName;
             tempItem.bundleDescription = _BundleDescription;
 
             
@@ -821,6 +817,7 @@ namespace LazyHelper.LazyCheckList
                 if (!beforeEdit.Equals(masterChecklist.AllBundles[i].bundleName))
                 {
                     EditorUtility.SetDirty(masterChecklist);
+                    Directory.Delete("Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/" + masterChecklist.AllBundles[i].bundleName);
                     AssetDatabase.SaveAssets();
                 }
                 #endregion
@@ -839,22 +836,33 @@ namespace LazyHelper.LazyCheckList
                     AssetDatabase.SaveAssets();
                 }
                 #endregion
-                
 
                 #region Delete
                 GUILayout.FlexibleSpace();
                 if (GUILayout.Button("Delete Bundle"))
                 {
                     EditorUtility.SetDirty(masterChecklist);
+
+                    var tempFiles = Directory.GetFiles("Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/" + masterChecklist.AllBundles[i].orginalName);
+
+                    for (int j = 0; j < tempFiles.Length; j++)
+                    {
+                        Debug.Log(tempFiles[j]);
+                        File.Delete(tempFiles[j]);
+                    }
+                    
+                    Directory.Delete("Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/" + masterChecklist.AllBundles[i].orginalName);
+                    File.Delete("Assets/Editor/LazyHelpers/LazyCheckList/Resources/Bundles/" + masterChecklist.AllBundles[i].orginalName+".meta");
                     AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(masterChecklist.AllBundles[i]));
+                    
                     masterChecklist.AllBundles.RemoveAt(i);
                     AssetDatabase.SaveAssets();
+                    AssetDatabase.Refresh();
                 }
                 GUILayout.EndHorizontal();
                 #endregion
             }
         }
-        
         #endregion
     }
     
@@ -1093,11 +1101,60 @@ namespace LazyHelper.LazyCheckList
                 AssetDatabase.SaveAssets();
             }
 
+            GUILayout.FlexibleSpace();
+            
+            GUILayout.BeginHorizontal();
             if (displayEdit)
             {
-                isInEditMode = GUILayout.Toggle(isInEditMode, "Edit Mode");     
-            }
+                string buttonName = String.Empty;
 
+                if (isInEditMode)
+                {
+                    buttonName = "Deactivate Edit Mode";
+                }
+                else
+                {
+                    buttonName = "Activate Edit Mode";
+                }
+
+
+                if (GUILayout.Button(buttonName, GUILayout.MinWidth(150),GUILayout.MaxWidth(150)))
+                {
+                    if (isInEditMode)
+                    {
+                        isInEditMode = false;
+                        AssetDatabase.SaveAssets();
+                    }
+                    else
+                    {
+                        isInEditMode = true;
+                        EditorUtility.SetDirty(bundle);
+                        EditorUtility.SetDirty(bundle.generalCategory);
+                        EditorUtility.SetDirty(bundle.bugCategory);
+                        EditorUtility.SetDirty(bundle.doneCategory);
+                        EditorUtility.SetDirty(bundle.ideaCategory);
+                        EditorUtility.SetDirty(bundle.urgentCategory);
+                        EditorUtility.SetDirty(bundle.wIPCategory);
+                    }
+                }
+                
+                GUIStyle tempStyle = new GUIStyle();
+                tempStyle.fontSize = 20;
+                tempStyle.alignment = TextAnchor.MiddleLeft;
+                
+                if (isInEditMode)
+                {
+                    tempStyle.normal.textColor = Color.green;
+                    GUILayout.Label("✓",tempStyle);
+                }
+                else
+                {
+                    tempStyle.normal.textColor = Color.red;
+                    GUILayout.Label("x",tempStyle);
+                }
+            }
+            GUILayout.EndHorizontal();
+            GUILayout.Space(5);
             
             GUILayout.EndHorizontal();
             GUILayout.EndArea();
@@ -1126,6 +1183,11 @@ namespace LazyHelper.LazyCheckList
             GUILayout.BeginVertical();
             if (GUILayout.Button("ALL", buttonStyle,GUILayout.Height(25)))
             {
+                if (isInEditMode)
+                {
+                    AssetDatabase.SaveAssets();
+                }
+                
                 isInEditMode = false;
                 displayEdit = false;
                 
@@ -1266,8 +1328,7 @@ namespace LazyHelper.LazyCheckList
                                         bundle.doneCategory.Items.Add(tempitem);
                                         break;
                                 }
-
-                                bundle.activeDisplayCategories[i].Items.RemoveAt(j);
+                            bundle.activeDisplayCategories[i].Items.RemoveAt(j);
                         }
                         
                         buttonStyle.normal.textColor = Color.red;
