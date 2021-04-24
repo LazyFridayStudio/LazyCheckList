@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ce6b1c1eae665841aa0841d67896445, type: 3}
+  m_Name: First Bundle
+  m_EditorClassIdentifier: 
+  thumbnail: {fileID: 0}
+  bundleName: First Bundle
+  orginalName: First Bundle
+  bundleDescription: Basic description of a bundle to be displayed in the bundle
+    browser
+  activeDisplayCategories:
+  - {fileID: 11400000, guid: 6ef3dc8b805c14649a48dd8c54ca74ae, type: 2}
+  generalCategory: {fileID: 11400000, guid: 6ef3dc8b805c14649a48dd8c54ca74ae, type: 2}
+  urgentCategory: {fileID: 11400000, guid: 758a02a848f45ac43b146f2964627120, type: 2}
+  wIPCategory: {fileID: 11400000, guid: f62daa6788e063041af2b0d2d20c2f76, type: 2}
+  bugCategory: {fileID: 11400000, guid: 0b96e11aa5ab8ab4abe58776b736cf6a, type: 2}
+  ideaCategory: {fileID: 11400000, guid: 905e101154eb25f4393d4cf4079810f7, type: 2}
+  doneCategory: {fileID: 11400000, guid: 152f609b535cc97459eeec73b78dc9c1, type: 2}

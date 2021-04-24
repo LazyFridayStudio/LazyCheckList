@@ -10,7 +10,7 @@ namespace LazyHelper.LazyCheckList.Scriptables
         public string orginalName;
         public string bundleDescription;
         
-        public List<LazyCheckListCategory> activeDisplayCategories;
+        public List<LazyCheckListCategory> activeDisplayCategories = new List<LazyCheckListCategory>();
         public LazyCheckListCategory generalCategory;
         public LazyCheckListCategory urgentCategory;
         public LazyCheckListCategory wIPCategory;

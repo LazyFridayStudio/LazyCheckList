@@ -16,11 +16,6 @@
                 <e p="LazyCheckListMaster.cs" t="Include" />
               </e>
             </e>
-            <e p="LazySceneLoader" t="Include">
-              <e p="LazyScene.cs" t="Include" />
-              <e p="LazySceneCategorys.cs" t="Include" />
-              <e p="LazySceneLoader.cs" t="Include" />
-            </e>
             <e p="Resources" t="Include">
               <e p="LazyEditorHelperUtils.cs" t="Include" />
             </e>
